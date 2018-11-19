@@ -1,5 +1,5 @@
 const Block = require('./block');
-const { DIFFICULITY } = require('../config');
+const { DIFFICULTY } = require('../config');
 
 describe('Block', () => {
 
@@ -18,7 +18,7 @@ describe('Block', () => {
     });
 
     it('指定なインドのハッシュ値生成テスト', () => {
-        expect(block.hash.substring(0,DIFFICULITY)).toEqual('0'.repeat(DIFFICULITY));
+        expect(block.hash.substring(0,DIFFICULTY)).toEqual('0'.repeat(DIFFICULTY));
         console.log(block.toString());
     });
 });
