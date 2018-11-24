@@ -20,6 +20,10 @@ describe('Transaction', () => {
           .toEqual(amount);
     });
 
+    it('取引署名テスト', () => {
+        expect(transaction.input.amount).toEqual(amount);
+    });
+
     describe('残高超過テスト', () => {
         beforeEach( () => {
             amount = 50000;
