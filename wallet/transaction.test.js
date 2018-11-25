@@ -24,6 +24,15 @@ describe('Transaction', () => {
         expect(transaction.input.amount).toEqual(amount);
     });
 
+    it('正常な取引の検証テスト', () => {
+        expect(Transaction.verifyTransaction(transaction)).toBe(true);
+    });
+
+    it('不正な取引の検証テスト', () => {
+        transaction.outputs[0].amount = 5555;
+        expect(Transaction.verifyTransaction(transaction)).toBe(false);
+    });
+
     describe('残高超過テスト', () => {
         beforeEach( () => {
             amount = 50000;
